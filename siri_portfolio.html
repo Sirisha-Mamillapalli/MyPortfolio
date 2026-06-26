@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sirisha Mamillapalli | Portfolio</title>
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #a855f7;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #334155;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Container & Sections */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 6rem 0 3rem 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 50%;
+            height: 3px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        /* Hero Section */
+        #hero {
+            min-height: 95vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 0;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: -1px;
+        }
+
+        .hero-tagline {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero-desc {
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .social-icons a {
+            color: var(--text-main);
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        /* About & Skills Flex Layout */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 4rem;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .skill-tag {
+            background-color: var(--card-bg);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid #334155;
+            transition: border-color 0.3s;
+        }
+
+        .skill-tag:hover {
+            border-color: var(--accent-color);
+        }
+
+        /* Education & Experience Timeline layout */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .timeline-item {
+            background-color: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .timeline-meta {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Certifications & Achievements Grids */
+        .grid-two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .card i {
+            color: var(--accent-color);
+            font-size: 1.3rem;
+            margin-top: 0.2rem;
+        }
+
+        .card-content h4 {
+            margin-bottom: 0.3rem;
+        }
+
+        .card-content p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Contact Details Footer-ish style */
+        .contact-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            background-color: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .contact-item i {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .contact-item p {
+            font-size: 0.95rem;
+        }
+
+        .contact-item a {
+            color: var(--text-main);
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid #334155;
+            margin-top: 4rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .about-grid, .grid-two-col {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .nav-links {
+                display: none; /* Can be expanded into a mobile menu burger if required */
+            }
+            .timeline-meta {
+                flex-direction: column;
+                gap: 0.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <nav>
+        <div class="logo">SIRISHA<span> Mamillapalli</span></div>
+        <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        
+        <!-- Hero Section -->
+        <section id="hero">
+            <div class="hero-content">
+                <h1>Sirisha Mamillapalli</h1>
+                <p class="hero-desc">Enthusiastic Computer Science student specializing in Artificial Intelligence and Machine Learning. Passionate about exploring innovative data-driven solutions to real-world problems.</p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/sirisha-mamillapalli" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:sirisirisha22005@gmail.com"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About & Skills Section -->
+        <section id="about">
+            <div class="about-grid">
+                <div>
+                    <h2 class="section-title">Profile Summary</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+                        I am an adaptive learner deeply interested in Programming, Artificial Intelligence, and Machine Learning concepts. I am focused on strengthening my foundational toolkit and applying classroom principles to real-world deployment landscapes.
+                    </p>
+                    <h3 style="margin-bottom: 1rem;">Interests & Hobbies</h3>
+                    <ul style="list-style-type: none; color: var(--text-muted); display: flex; flex-direction: column; gap: 0.5rem;">
+                        <li><i class="fas fa-search" style="color: var(--accent-color); margin-right: 0.5rem;"></i> Exploring new things through continuous learning</li>
+                        <li><i class="fas fa-gamepad" style="color: var(--accent-color); margin-right: 0.5rem;"></i> Playing Games</li>
+                        <li><i class="fas fa-globe" style="color: var(--accent-color); margin-right: 0.5rem;"></i> Web Surfing</li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="section-title">Core Skills</h2>
+                    <div class="skills-container">
+                        <div class="skill-tag">Python</div>
+                        <div class="skill-tag">Data Structures</div>
+                        <div class="skill-tag">OOPS (Object-Oriented Programming)</div>
+                        <div class="skill-tag">HTML</div>
+                        <div class="skill-tag">CSS</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education">
+            <h2 class="section-title">Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-meta">
+                        <strong>NRI Institute of Technology</strong>
+                        <span>2023 - 2027</span>
+                    </div>
+                    <h4>B.Tech in Computer Science and Engineering (AIML)</h4>
+                    <p style="color: var(--accent-color); font-weight: 600; margin-top: 0.3rem;">CGPA: 8.6</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-meta">
+                        <strong>Sri Viveka Junior College</strong>
+                        <span>2021 - 2023</span>
+                    </div>
+                    <h4>Intermediate (MPC)</h4>
+                    <p style="color: var(--accent-color); font-weight: 600; margin-top: 0.3rem;">GPA: 9.44</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-meta">
+                        <strong>Oxford High School</strong>
+                        <span>2019 - 2021</span>
+                    </div>
+                    <h4>Secondary School Education</h4>
+                    <p style="color: var(--accent-color); font-weight: 600; margin-top: 0.3rem;">GPA: 10.0</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications & Achievements Section -->
+        <section id="certifications">
+            <div class="grid-two-col">
+                <div>
+                    <h2 class="section-title">Certifications</h2>
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div class="card">
+                            <i class="fas fa-certificate"></i>
+                            <div class="card-content">
+                                <h4>Cloud Computing</h4>
+                                <p>NPTEL Certification</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <i class="fas fa-certificate"></i>
+                            <div class="card-content">
+                                <h4>Introduction to Internet of Things</h4>
+                                <p>NPTEL Certification</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <i class="fas fa-certificate"></i>
+                            <div class="card-content">
+                                <h4>Java Programming for Beginners</h4>
+                                <p>Infosys SimpliLearn</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <i class="fas fa-certificate"></i>
+                            <div class="card-content">
+                                <h4>Artificial Intelligence</h4>
+                                <p>Infosys Springboard</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="section-title">Achievements</h2>
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div class="card">
+                            <i class="fas fa-medal" style="color: #ffd700;"></i>
+                            <div class="card-content">
+                                <h4>Gold Medalist</h4>
+                                <p>Awarded for excellence and participation in Badminton tournaments.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <i class="fas fa-medal" style="color: #cd7f32;"></i>
+                            <div class="card-content">
+                                <h4>Bronze Medalist</h4>
+                                <p>Awarded for participation in Carroms competitive events.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-details">
+                
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <h4>Email</h4>
+                    <p><a href="mailto:sirisirisha22005@gmail.com">sirisirisha22005@gmail.com</a></p>
+                </div>
+               
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <h4>LinkedIn</h4>
+                    <p><a href="https://www.linkedin.com/in/sirisha-mamillapalli" target="_blank">Connect with me</a></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+  <p>&copy; <span id="year"></span> Sirisha Mamillapalli. All rights reserved.</p>
+</footer>
+
+    </div>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
